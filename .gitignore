@@ -1,0 +1,5 @@
+src/main/resources/scripts/*
+.idea/
+producerbasics.iml
+src/main/resources/tmp
+target/
