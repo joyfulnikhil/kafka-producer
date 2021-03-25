@@ -22,9 +22,14 @@ public class BasicProducer {
     properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,AppConfigs.BROKERS_LIST);
     properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, IntegerSerializer.class.getName());
     properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+    properties.put(ProducerConfig.BUFFER_MEMORY_CONFIG,67108864);//64MB
+    properties.put(ProducerConfig.ACKS_CONFIG,"all");
+    properties.put(ProducerConfig.COMPRESSION_TYPE_CONFIG,"gzip");
+    properties.put(ProducerConfig.LINGER_MS_CONFIG,1000);
+
 
     KafkaProducer<Integer,String> producer= new KafkaProducer<>(properties);
-    for (int i=0;i<200;i++){
+    for (int i=0;i<10000;i++){
         producer.send(new ProducerRecord<>(AppConfigs.TOPIC_NAME,i,"Hello-Kafka-"+i),((recordMetadata, e) -> {
             if(e==null){
                 logger.info("Partition: {}, Offset: {}, Timestamp: {}",
