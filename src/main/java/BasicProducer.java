@@ -1,5 +1,6 @@
 
 
+import config.AppConfigs;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -18,7 +19,7 @@ public class BasicProducer {
     public static void main(String[] args) {
     logger.info("The Producer has Started!!");
     Properties properties=new Properties();
-    properties.put(ProducerConfig.CLIENT_ID_CONFIG,AppConfigs.APPLICATION_ID);
+    properties.put(ProducerConfig.CLIENT_ID_CONFIG, AppConfigs.APPLICATION_ID);
     properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,AppConfigs.BROKERS_LIST);
     properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, IntegerSerializer.class.getName());
     properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());

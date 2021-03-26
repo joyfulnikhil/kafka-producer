@@ -3,3 +3,4 @@ src/main/resources/scripts/*
 producerbasics.iml
 src/main/resources/tmp
 target/
+data/
