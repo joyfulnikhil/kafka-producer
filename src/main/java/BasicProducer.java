@@ -27,6 +27,7 @@ public class BasicProducer {
     properties.put(ProducerConfig.ACKS_CONFIG,"all");
     properties.put(ProducerConfig.COMPRESSION_TYPE_CONFIG,"gzip");
     properties.put(ProducerConfig.LINGER_MS_CONFIG,1000);
+    properties.put(ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG,true);
 
 
     KafkaProducer<Integer,String> producer= new KafkaProducer<>(properties);
