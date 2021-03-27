@@ -36,6 +36,10 @@ public class TransactionalProducer {
         KafkaProducer<Integer,String> producer= new KafkaProducer<>(props);
 
         producer.initTransactions();
+/*
+*
+* First Transaction
+* */
 
         logger.info("Starting the 1st transaction");
 
@@ -52,7 +56,11 @@ public class TransactionalProducer {
             producer.close();
             throw new RuntimeException(e);
         }
-
+/*
+*
+* 2nd transaction
+*
+* */
 
         logger.info("Starting the 2nd transaction");
 

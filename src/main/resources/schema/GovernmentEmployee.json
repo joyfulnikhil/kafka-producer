@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "javaType": "com.joy.kafka.json.schema.GovernmentEmployee",
+  "extends": {"$ref": "Employee.json" },
+  "properties": {
+    "AadharCard": {"type": "string"},
+    "PanCard": {"type": "string"}
+  }
+}

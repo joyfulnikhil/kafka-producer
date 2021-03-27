@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "javaType": "com.joy.kafka.json.schema.Address",
+  "properties": {
+    "Street1": {"type": "string"},
+    "Street2": {"type": "string"},
+    "City": {"type": "string"},
+    "State": {"type": "integer"},
+    "PinCode": {"type": "string"},
+    "Country": {"type": "string"}
+  }
+}

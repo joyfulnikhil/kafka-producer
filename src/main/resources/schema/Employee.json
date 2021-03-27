@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "javaType": "com.joy.kafka.json.schema.Employee",
+  "properties": {
+    "EmployeeId": {"type": "string"},
+    "FirstName": {"type": "string"},
+    "LastName": {"type": "string"},
+    "Age": {"type": "integer"},
+    "Sex": {"type": "string"},
+    "Address": {"type": "object","$ref":"Address.json"}
+  }
+}
